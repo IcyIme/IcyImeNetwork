@@ -1,25 +1,6 @@
 ﻿@page "/"
-@inject LanguageService LanguageService
-@inject IStringLocalizer<Index> Localizer
+@inject IStringLocalizer<Home> Localizer
+@inject ILocalStorageService LocalStorage
+@inject IJSRuntime JSRuntime
 
-<h3>@Localizer["HelloWorld"]</h3>
-<button @onclick="ChangeLanguage">Change Language</button>
-
-@code {
-    private async Task ChangeLanguage()
-    {
-        var currentLanguage = await LanguageService.GetCurrentLanguageAsync();
-        var newLanguage = currentLanguage == "en" ? "fr" : "en";
-        await LanguageService.SetLanguageAsync(newLanguage);
-
-        // Apply the new language to the app
-        await SetLanguage(newLanguage);
-    }
-
-    private async Task SetLanguage(string language)
-    {
-        var cultureInfo = new System.Globalization.CultureInfo(language);
-        System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-        System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-    }
-}
+<h3>@Localizer["Hello"]</h3>

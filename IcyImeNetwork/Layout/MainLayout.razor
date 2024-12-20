@@ -1,22 +1,4 @@
 ﻿@inherits LayoutComponentBase
-@inject LanguageService LanguageService
-@inject IStringLocalizer<App> Localizer
-
-<CascadingValue Value="Localizer">
+@inject IStringLocalizer<App> _Localizer
+<IcyImeNetwork.components.CultureSelector />
     @Body
-</CascadingValue>
-
-@code {
-    protected override async Task OnInitializedAsync()
-    {
-        var language = await LanguageService.GetCurrentLanguageAsync();
-        await SetLanguage(language);
-    }
-
-    private async Task SetLanguage(string language)
-    {
-        var cultureInfo = new System.Globalization.CultureInfo(language);
-        System.Threading.Thread.CurrentThread.CurrentCulture = cultureInfo;
-        System.Threading.Thread.CurrentThread.CurrentUICulture = cultureInfo;
-    }
-}
