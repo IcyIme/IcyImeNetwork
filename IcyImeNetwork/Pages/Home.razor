@@ -1,5 +1,17 @@
 ﻿@page "/"
 @layout LandingLayout
 @inject IStringLocalizer<Home> Localizer
+@inject NavigationManager navi
+
+<button @onclick="nav">sadsad</button>
 
 <h1>@Localizer["Hello"]</h1>
+
+@code{
+
+    public void nav()
+    {
+        navi.NavigateTo("/weather");
+    }
+
+}
