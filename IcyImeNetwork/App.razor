@@ -1,18 +1,18 @@
-﻿@using Blazorise.Animate
+﻿
 
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <BlazoriseAnimate Animation="FadeIn" Duration="2s">
-            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        </BlazoriseAnimate>
+        <Animate>
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(LandingLayout)" />
+        </Animate>
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
-        <BlazoriseAnimate Animation="ZoomIn" Duration="1s">
+        <Animate>
             <LayoutView Layout="@typeof(MainLayout)">
                 <p role="alert">Sorry, there's nothing at this address.</p>
             </LayoutView>
-        </BlazoriseAnimate>
+        </Animate>
     </NotFound>
 </Router>
