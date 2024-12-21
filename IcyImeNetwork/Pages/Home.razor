@@ -1,6 +1,5 @@
 ﻿@page "/"
+@layout LandingLayout
 @inject IStringLocalizer<Home> Localizer
-@inject ILocalStorageService LocalStorage
-@inject IJSRuntime JSRuntime
 
-<h3>@Localizer["Hello"]</h3>
+<h1>@Localizer["Hello"]</h1>

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
+    <PackageReference Include="BlazorTransitionableRoute" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.11" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" />
@@ -35,6 +36,14 @@
     <EmbeddedResource Update="Resources\Index\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Pages\Home.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Pages\Home.sk-SK.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.sk-SK.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -1,6 +1,7 @@
 using System.Globalization;
 using Blazored.LocalStorage;
 using IcyImeNetwork;
+using IcyImeNetwork.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Radzen;
@@ -15,6 +16,9 @@ builder.Services.AddLocalization(options => options.ResourcesPath = "Resources")
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddRadzenComponents();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddScoped<BlazorTransitionableRoute.IRouteTransitionInvoker,
+    BlazorTransitionableRoute.DefaultRouteTransitionInvoker>();
+builder.Services.AddSingleton<LanguageShuffle>();
 
 var host = builder.Build();
 await host.SetDefaultCulture(); // Retrieves local storage value and sets the thread's current culture.
